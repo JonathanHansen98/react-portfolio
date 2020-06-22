@@ -6,8 +6,10 @@ import calculatorImg from '../../img/calculator.PNG';
 import plannerImg from '../../img/planner.PNG';
 import quizImg from '../../img/quiz.PNG';
 import thriveImg from '../../img/thrive.PNG';
+import { motion } from 'framer-motion';
 
 const Projects = () => {
+
   const styles = {
     card: {
       width: '20rem',
@@ -15,17 +17,17 @@ const Projects = () => {
       backgroundColor: '#202020',
       color: '#ebebe3',
       textDecoration: 'none'
-  },
-  link : {
-    color: '#ebebe3',
-    textDecoration: 'none'
-  },
-  accordion : {
-    backgroundColor: '#202020',
-    color: '#ebebe3',
-    textDecoration: 'none'
+    },
+    link: {
+      color: '#ebebe3',
+      textDecoration: 'none'
+    },
+    accordion: {
+      backgroundColor: '#202020',
+      color: '#ebebe3',
+      textDecoration: 'none'
+    }
   }
-}
 
   const projects = [
     {
@@ -38,8 +40,8 @@ const Projects = () => {
     {
       img: calculatorImg,
       name: 'Cal.Culator',
-      about: 'For project 1, my team and I came up with the idea of creating an app that suggested meals to a user based on their input, and calculate the combined calories and macro nutrients for each meal they selected.', 
-      deployed: 'https://jonathanhansen98.github.io/nutrition-calculator', 
+      about: 'For project 1, my team and I came up with the idea of creating an app that suggested meals to a user based on their input, and calculate the combined calories and macro nutrients for each meal they selected.',
+      deployed: 'https://jonathanhansen98.github.io/nutrition-calculator',
       github: 'https://github.com/JonathanHansen98/nutrition-calculator'
     },
     {
@@ -74,54 +76,56 @@ const Projects = () => {
   return (
     <div>
       <Row className="pb-md-5">
-        <Col className='d-flex justify-content-center'>
-          <h1>Projects</h1>
+        <Col>
+          <h1 className='text-center'>Projects</h1>
         </Col>
       </Row>
-      <Row >
+      <Row className='d-flex justify-content-center'>
         {projects.map((project, index) => {
           return (
-            <Col key={index} className='p-2 pb-5  d-flex justify-content-center' md={4}>
-            <Accordion>
-              <Card className="text-center" style={styles.card}>
-                <Card.Img
-                  variant="top"
-                  src={project.img}
-                />
-                <Card.Header>
-                  
-                    <h4 style={styles.link} > {project.name} </h4>
-                  
-                </Card.Header>
-  
-                <Card.Header>
-                  <Accordion.Toggle style={styles.link} as={Button} variant="link" eventKey="0">
-                    About
+            <motion.div transition={{duration:.5}} whileHover={{scale:1.25, zIndex: 10, y:-25,}}>
+              <Col key={index} className='p-2 pb-5 ' md={4}>
+                <Accordion>
+                  <Card className="text-center" style={styles.card}>
+                    <Card.Img
+                      variant="top"
+                      src={project.img}
+                    />
+                    <Card.Header>
+
+                      <h4 style={styles.link} > {project.name} </h4>
+
+                    </Card.Header>
+
+                    <Card.Header>
+                      <Accordion.Toggle style={styles.link} as={Button} variant="link" eventKey="0">
+                        About
                   </Accordion.Toggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey="0">
-                  <Card.Body>{project.about}</Card.Body>
-                </Accordion.Collapse>
-                <Card style={styles.accordion}>
-                  <Card.Header>
-                    <Accordion.Toggle style={styles.link} as={Button} variant="link" eventKey="1">
-                      Project Links
+                    </Card.Header>
+                    <Accordion.Collapse eventKey="0">
+                      <Card.Body>{project.about}</Card.Body>
+                    </Accordion.Collapse>
+                    <Card style={styles.accordion}>
+                      <Card.Header>
+                        <Accordion.Toggle style={styles.link} as={Button} variant="link" eventKey="1">
+                          Project Links
                     </Accordion.Toggle>
-                  </Card.Header>
-                  <Accordion.Collapse eventKey="1">
-                    <Card.Body>
-                      <a style={styles.link} target='_blank' rel="noopener noreferrer" href={project.github}>Github</a>
-                      <br/>
-                      <a style={styles.link} target='_blank' rel="noopener noreferrer" href={project.deployed}>Deployed</a>
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </Card>
-              </Card>
-            </Accordion>
-          </Col>
+                      </Card.Header>
+                      <Accordion.Collapse eventKey="1">
+                        <Card.Body>
+                          <a style={styles.link} target='_blank' rel="noopener noreferrer" href={project.github}>Github</a>
+                          <br />
+                          <a style={styles.link} target='_blank' rel="noopener noreferrer" href={project.deployed}>Deployed</a>
+                        </Card.Body>
+                      </Accordion.Collapse>
+                    </Card>
+                  </Card>
+                </Accordion>
+              </Col>
+            </motion.div>
           )
         })}
-       
+
       </Row>
     </div>
   );
