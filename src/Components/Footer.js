@@ -6,7 +6,7 @@ import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 const Footer = () => {
   return (
     <div>
-      <Row className='p-3'>
+      <Row className='py-3 mx-0'>
         <Col xs='auto'>
           <a href="https://github.com/jonathanhansen98"><FontAwesomeIcon color='#ebebe3' className='my-2 mx-3 hvr-forward' icon={faGithubSquare} size='3x' /></a>
           <a href="https://www.linkedin.com/in/jon-hansen-dev/"><FontAwesomeIcon color='#ebebe3' className='my-2 mx-3 hvr-forward' icon={faLinkedinIn} size='3x' /></a>
