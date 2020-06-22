@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from '../Topbar';
 import Projects from './Projects'
-import Contact from './Contact';
+// import Contact from './Contact';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';

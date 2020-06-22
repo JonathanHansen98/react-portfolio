@@ -6,7 +6,6 @@ import calculatorImg from '../../img/calculator.PNG';
 import plannerImg from '../../img/planner.PNG';
 import quizImg from '../../img/quiz.PNG';
 import thriveImg from '../../img/thrive.PNG';
-import styled from 'styled-components';
 
 const Projects = () => {
   const styles = {
@@ -111,9 +110,9 @@ const Projects = () => {
                   </Card.Header>
                   <Accordion.Collapse eventKey="1">
                     <Card.Body>
-                      <a style={styles.link} target='_blank' href={project.github}>Github</a>
+                      <a style={styles.link} target='_blank' rel="noopener noreferrer" href={project.github}>Github</a>
                       <br/>
-                      <a style={styles.link} target='_blank' href={project.deployed}>Deployed</a>
+                      <a style={styles.link} target='_blank' rel="noopener noreferrer" href={project.deployed}>Deployed</a>
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
