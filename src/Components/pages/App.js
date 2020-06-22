@@ -130,23 +130,27 @@ const Home = () => {
           </Row>
         </Container>
       </Skewed>
+
       <Container style={styles.container}>
         <Projects />
       </Container>
+
       <Skewed className='p-5 mt-5' middle>
         <Row style={styles.position} className='p-5 d-flex justify-content-center'>
           {images.map(img => {
             return (
-              <Col className='px-5' sm={'auto'}>
+              <Col className='p-5' xs={'auto'}>
               <img height='100px' src={img.img} />
               </Col>
             )
           })}
         </Row>
       </Skewed>
+
       <Container style={styles.container}>
 
       </Container>
+
       <Skewed>
       </Skewed>
     </>
