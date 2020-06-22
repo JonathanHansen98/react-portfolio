@@ -14,7 +14,7 @@ const Topbar = () => {
   `
   return (
     <div>
-      <StyledBar>
+      <StyledBar className='fixed-top' >
         <Navbar>
           <Navbar.Brand style={styles.darnkText} href="/">Home</Navbar.Brand>
           <Nav className="mr-auto">

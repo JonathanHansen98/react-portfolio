@@ -6,18 +6,17 @@ import styled from 'styled-components';
 import { Container, Row, Col } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-
+import mongoImg from '../../img/mongo.png';
+import expressImg from '../../img/express.png';
+import reactImg from '../../img/react.png';
+import nodeImg from '../../img/node.png';
 function App() {
   return (
     <Router>
       <div className="App">
-        <Nav />
+        <Nav/>
         <Switch>
           <Route path='/*' component={Home} exact />
-          <Route path='/projects' component={Projects} exact />
-          <Route path='/contact' component={Contact} />
         </Switch>
       </div>
     </Router>
@@ -25,9 +24,20 @@ function App() {
 }
 
 const Home = () => {
-  const icons = [
-    
-  ]
+  const images = [
+    {
+    img: mongoImg
+  },
+    {
+    img: expressImg
+  },
+    {
+    img: reactImg
+  },
+    {
+    img: nodeImg
+  },
+]
   const styles = {
     container: {
       minHeight: '750px'
@@ -35,6 +45,9 @@ const Home = () => {
     content: {
       position: "absolute",
       top: "1%"
+    },
+    position: {
+      position: 'relative'
     }
   }
   const Skewed = styled.div`
@@ -75,7 +88,7 @@ const Home = () => {
     }
   }
 
-  const svg =  {
+  const svg = {
     hidden: {
       x: -250
     },
@@ -89,15 +102,15 @@ const Home = () => {
       <Skewed className='pt-5' bottom>
         <Container style={styles.container}>
           <Row className='h-100 py-5'>
-            <Col md={6}>
+            <Col className='d-flex justify-content-center' md={6}>
               <motion.svg
-              initial={svg.hidden}
-              animate={svg.visible}
-              transition= {{duration:2}}
+                initial={svg.hidden}
+                animate={svg.visible}
+                transition={{ duration: 2 }}
                 width="60%"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 312.39 294.21">
-                
+
                 <motion.path
                   d="M170,293.71a7.91,7.91,0,0,1-6.85-3.93l-1.1-1.91a8,8,0,0,1,2.9-10.81L293.85,202V116.65H18.53v88.21a7.91,7.91,0,0,1-7.9,7.91H8.4a7.92,7.92,0,0,1-7.9-7.91V13.19A8.7,8.7,0,0,1,9.18,4.5h.67a8.69,8.69,0,0,1,8.68,8.69V98.62H293.85V9.18A8.7,8.7,0,0,1,302.53.5h.67a8.7,8.7,0,0,1,8.69,8.68V206.87a8,8,0,0,1-1.82,5l-.09.1a7.82,7.82,0,0,1-2.24,2L174.09,292.6A8,8,0,0,1,170,293.71Z"
                   initial={icon.hidden}
@@ -118,13 +131,19 @@ const Home = () => {
         </Container>
       </Skewed>
       <Container style={styles.container}>
-        <Projects/>
+        <Projects />
       </Container>
-        <Skewed className='p-5 mt-5 d-flex justify-content-center' middle>
-          <Row className='p-5'>
-            
-          </Row>
-        </Skewed>
+      <Skewed className='p-5 mt-5' middle>
+        <Row style={styles.position} className='p-5 d-flex justify-content-center'>
+          {images.map(img => {
+            return (
+              <Col className='px-5' sm={'auto'}>
+              <img height='100px' src={img.img} />
+              </Col>
+            )
+          })}
+        </Row>
+      </Skewed>
       <Container style={styles.container}>
 
       </Container>

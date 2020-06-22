@@ -6,13 +6,28 @@ import calculatorImg from '../../img/calculator.PNG';
 import plannerImg from '../../img/planner.PNG';
 import quizImg from '../../img/quiz.PNG';
 import thriveImg from '../../img/thrive.PNG';
+import styled from 'styled-components';
+
 const Projects = () => {
   const styles = {
     card: {
       width: '20rem',
-      minHeight: '360px'
-}
+      minHeight: '360px',
+      backgroundColor: '#202020',
+      color: '#ebebe3',
+      textDecoration: 'none'
+  },
+  link : {
+    color: '#ebebe3',
+    textDecoration: 'none'
+  },
+  accordion : {
+    backgroundColor: '#202020',
+    color: '#ebebe3',
+    textDecoration: 'none'
   }
+}
+
   const projects = [
     {
       img: lockdImg,
@@ -76,29 +91,29 @@ const Projects = () => {
                 />
                 <Card.Header>
                   
-                    <h3> {project.name} </h3>
+                    <h3 style={styles.link} > {project.name} </h3>
                   
                 </Card.Header>
   
                 <Card.Header>
-                  <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                  <Accordion.Toggle style={styles.link} as={Button} variant="link" eventKey="0">
                     About
                   </Accordion.Toggle>
                 </Card.Header>
                 <Accordion.Collapse eventKey="0">
                   <Card.Body>{project.about}</Card.Body>
                 </Accordion.Collapse>
-                <Card>
+                <Card style={styles.accordion}>
                   <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                    <Accordion.Toggle style={styles.link} as={Button} variant="link" eventKey="1">
                       Project Links
                     </Accordion.Toggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="1">
                     <Card.Body>
-                      <a target='_blank' href={project.github}>Github</a>
+                      <a style={styles.link} target='_blank' href={project.github}>Github</a>
                       <br/>
-                      <a target='_blank' href={project.deployed}>Deployed</a>
+                      <a style={styles.link} target='_blank' href={project.deployed}>Deployed</a>
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
