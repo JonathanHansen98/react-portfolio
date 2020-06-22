@@ -20,8 +20,6 @@ function App() {
         <Nav/>
         <Switch>
           <Route path='/*' component={Home} exact />
-          <Route path='/*' component={Home} exact />
-          <Route path='/*' component={Home} exact />
         </Switch>
       </div>
     </Router>
@@ -49,12 +47,13 @@ const Home = () => {
     },
     content: {
       position: "absolute",
-      top: "1%"
+      top: "15%"
     },
     position: {
       position: 'relative'
     }
   }
+
   const Skewed = styled.div`
   background: ${props => props.background ? props.background : "#202020"};
   color: #ebebe3;
