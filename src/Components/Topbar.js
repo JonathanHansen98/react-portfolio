@@ -16,10 +16,10 @@ const Topbar = () => {
     <div>
       <StyledBar className='fixed-top' >
         <Navbar>
-          <Navbar.Brand style={styles.darnkText} href="/">Home</Navbar.Brand>
+          <Navbar.Brand style={styles.darnkText} href="#">Home</Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link style={styles.darnkText} href="/projects">Projects</Nav.Link>
-            <Nav.Link style={styles.darnkText} href="/contact">Contact</Nav.Link>
+            <Nav.Link style={styles.darnkText} href="#">Projects</Nav.Link>
+            <Nav.Link style={styles.darnkText} href="#">Contact</Nav.Link>
           </Nav>
         </Navbar>
       </StyledBar>
