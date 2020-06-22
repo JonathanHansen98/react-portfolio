@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Navbar, Nav, Col } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 
 const Topbar = () => {
   const styles = {

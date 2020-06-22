@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import mongoImg from '../img/mongo.png';
 import expressImg from '../img/express.png';
 import reactImg from '../img/react.png';
