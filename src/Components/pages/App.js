@@ -140,7 +140,7 @@ const Home = () => {
           {images.map(img => {
             return (
               <Col className='p-5' xs={'auto'}>
-              <img height='100px' src={img.img} />
+              <img height='100px' src={img.img} alt="" />
               </Col>
             )
           })}
