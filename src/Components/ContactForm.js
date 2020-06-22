@@ -6,7 +6,7 @@ const ContactForm = () => {
     <div>
       <input type="hidden" name="bot-field" />
       <input type="hidden" name="form-name" value="contact" />
-      <Form name='contact' method='POST' data-netlify='true'>
+      <Form name='contact' method='POST' data-netlify="true" data-netlify-honeypot="bot-field">
         <Form.Group controlId="name">
           <Form.Label>Name</Form.Label>
           <Form.Control name="name" type="text" placeholder="John Smith" />
