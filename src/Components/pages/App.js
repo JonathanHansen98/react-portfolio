@@ -66,10 +66,10 @@ const Home = () => {
     100% 100%, /* right bottom */
     0 75% /* left bottom */
   );` : props.middle ? `polygon(
-    100% 25%, /* left top */
-    100% 100%, /* right top */ 
-    0 75%, /* right bottom */
-    0% 0% /* left bottom */
+    0% 0%, /* left top */
+    100% 25%, /* right top */ 
+    100% 100%, /* right bottom */
+    0% 75% /* left bottom */
   );` : `polygon(
     0% 0%, /* left top */
     100% 25%, /* right top */ 
@@ -105,7 +105,7 @@ const Home = () => {
     <>
       <Skewed id='home' className='pt-5' bottom>
         <Container  style={styles.container}>
-          <Row className='my-5 py-5'>
+          <Row className='my-md-5 py-md-5 my-3 py-4'>
             <Col className='d-flex justify-content-center' md={6}>
               <motion.svg
                 initial={svg.hidden}
@@ -114,7 +114,7 @@ const Home = () => {
                 width="60%"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 312.39 294.21">
-
+lg
                 <motion.path
                   d="M170,293.71a7.91,7.91,0,0,1-6.85-3.93l-1.1-1.91a8,8,0,0,1,2.9-10.81L293.85,202V116.65H18.53v88.21a7.91,7.91,0,0,1-7.9,7.91H8.4a7.92,7.92,0,0,1-7.9-7.91V13.19A8.7,8.7,0,0,1,9.18,4.5h.67a8.69,8.69,0,0,1,8.68,8.69V98.62H293.85V9.18A8.7,8.7,0,0,1,302.53.5h.67a8.7,8.7,0,0,1,8.69,8.68V206.87a8,8,0,0,1-1.82,5l-.09.1a7.82,7.82,0,0,1-2.24,2L174.09,292.6A8,8,0,0,1,170,293.71Z"
                   initial={icon.hidden}
@@ -125,9 +125,9 @@ const Home = () => {
             </Col>
             <Col md={6}>
               <div className='d-flex flex-column justify-content-center align-items-center h-100 position-relative' style={styles.content}>
-                <h1>Jonathan Hansen</h1>
-                <h3 className='mb-5'>Full Stack Developer</h3>
-                <p className="pt-md-5 mt-md-5 text-center">I am a software engineer, currently enrolled in UofA's full stack web development course. I have a background in design, and value minimalism and simplicity, in my designs as well as my code.
+                <h1 className='text-center'>Jonathan Hansen</h1>
+                <h3 className='mb-md-5 mb-3'>Full Stack Developer</h3>
+                <p className="pt-md-5 mt-md-5 my-3 text-center">I am a software engineer, currently enrolled in UofA's full stack web development course. I have a background in design, and value minimalism and simplicity, in my designs as well as my code.
                </p>
               </div>
             </Col>

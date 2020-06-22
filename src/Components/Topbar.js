@@ -1,12 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Navbar, Nav, Col } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithubSquare,
-  faLinkedinIn,
-} from "@fortawesome/free-brands-svg-icons";
-import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
+
 const Topbar = () => {
   const styles = {
     darnkText: {
@@ -18,7 +13,7 @@ const Topbar = () => {
   `;
   return (
     <div>
-      <StyledBar className="fixed-top d-flex flex-row">
+      <StyledBar className="fixed-top">
         <Navbar>
           <Navbar.Brand
             className="hvr-forward"
@@ -44,39 +39,6 @@ const Topbar = () => {
             </Nav.Link>
           </Nav>
         </Navbar>
-        <div className="w-100 d-inline-flex justify-content-end">
-          <Col xs="auto">
-            <a href="https://github.com/jonathanhansen98">
-              <FontAwesomeIcon
-                color="#202020"
-                className="m-2 hvr-forward"
-                icon={faGithubSquare}
-                size="2x"
-              />
-            </a>
-          </Col>
-
-          <Col xs="auto">
-            <a href="https://www.linkedin.com/in/jon-hansen-dev/">
-              <FontAwesomeIcon
-                color="#202020"
-                className="m-2 hvr-forward"
-                icon={faLinkedinIn}
-                size="2x"
-              />
-            </a>
-            </Col>
-            <Col className='pr-0' xs="auto">
-            <a href="https://drive.google.com/file/d/1nB_vWYoHB0kE-atxyoWhnPc94TnXapv5/view?usp=sharing">
-              <FontAwesomeIcon
-                color="#202020"
-                className="m-2 hvr-forward"
-                icon={faFilePdf}
-                size="2x"
-              />
-            </a>
-            </Col>
-        </div>
       </StyledBar>
     </div>
   );
