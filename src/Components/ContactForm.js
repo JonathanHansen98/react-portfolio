@@ -4,6 +4,8 @@ import { Form, Button } from 'react-bootstrap';
 const ContactForm = () => {
   return (
     <div>
+      <input type="hidden" name="bot-field" />
+      <input type="hidden" name="form-name" value="contact" />
       <Form name='contact' method='POST' data-netlify='true'>
         <Form.Group controlId="name">
           <Form.Label>Name</Form.Label>
