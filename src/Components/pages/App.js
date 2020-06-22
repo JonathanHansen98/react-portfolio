@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from '../Topbar';
 import Projects from './Projects'
+import Contact from './Contact'
 // import Contact from './Contact';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -10,12 +11,16 @@ import mongoImg from '../../img/mongo.png';
 import expressImg from '../../img/express.png';
 import reactImg from '../../img/react.png';
 import nodeImg from '../../img/node.png';
+import Footer from '../Footer';
+
 function App() {
   return (
     <Router>
       <div className="App">
         <Nav/>
         <Switch>
+          <Route path='/*' component={Home} exact />
+          <Route path='/*' component={Home} exact />
           <Route path='/*' component={Home} exact />
         </Switch>
       </div>
@@ -99,9 +104,9 @@ const Home = () => {
 
   return (
     <>
-      <Skewed className='pt-5' bottom>
-        <Container style={styles.container}>
-          <Row className='h-100 py-5'>
+      <Skewed id='home' className='pt-5' bottom>
+        <Container  style={styles.container}>
+          <Row className='my-5 py-5'>
             <Col className='d-flex justify-content-center' md={6}>
               <motion.svg
                 initial={svg.hidden}
@@ -131,15 +136,15 @@ const Home = () => {
         </Container>
       </Skewed>
 
-      <Container style={styles.container}>
+      <Container id='projects' style={styles.container}>
         <Projects />
       </Container>
 
       <Skewed className='p-5 mt-5' middle>
         <Row style={styles.position} className='p-5 d-flex justify-content-center'>
-          {images.map(img => {
+          {images.map((img, index) => {
             return (
-              <Col className='p-5' xs={'auto'}>
+              <Col key={index} className='p-5' xs={'auto'}>
               <img height='100px' src={img.img} alt="" />
               </Col>
             )
@@ -147,11 +152,12 @@ const Home = () => {
         </Row>
       </Skewed>
 
-      <Container style={styles.container}>
-
+      <Container id='contact' style={styles.container}>
+          <Contact />
       </Container>
 
       <Skewed>
+        <Footer />
       </Skewed>
     </>
   )

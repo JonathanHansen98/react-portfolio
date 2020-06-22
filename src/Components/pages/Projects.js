@@ -81,7 +81,7 @@ const Projects = () => {
       <Row >
         {projects.map((project, index) => {
           return (
-            <Col className='p-2 pb-5  d-flex justify-content-center' md={4} key={index}>
+            <Col key={index} className='p-2 pb-5  d-flex justify-content-center' md={4} key={index}>
             <Accordion>
               <Card className="text-center" style={styles.card}>
                 <Card.Img
@@ -90,7 +90,7 @@ const Projects = () => {
                 />
                 <Card.Header>
                   
-                    <h3 style={styles.link} > {project.name} </h3>
+                    <h4 style={styles.link} > {project.name} </h4>
                   
                 </Card.Header>
   
