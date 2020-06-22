@@ -81,7 +81,7 @@ const Projects = () => {
       <Row >
         {projects.map((project, index) => {
           return (
-            <Col key={index} className='p-2 pb-5  d-flex justify-content-center' md={4} key={index}>
+            <Col key={index} className='p-2 pb-5  d-flex justify-content-center' md={4}>
             <Accordion>
               <Card className="text-center" style={styles.card}>
                 <Card.Img

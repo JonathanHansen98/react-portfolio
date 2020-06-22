@@ -1,6 +1,5 @@
 import React from 'react'
 import { Row, Col  } from "react-bootstrap";
-import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithubSquare, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
