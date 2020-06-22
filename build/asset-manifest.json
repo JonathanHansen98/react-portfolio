@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b8f631a4.chunk.css",
+    "main.js": "/static/js/main.d2e32d22.chunk.js",
+    "main.js.map": "/static/js/main.d2e32d22.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e312f208.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e312f208.js.map",
+    "static/js/2.8d725777.chunk.js": "/static/js/2.8d725777.chunk.js",
+    "static/js/2.8d725777.chunk.js.map": "/static/js/2.8d725777.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.fd576be60e814ea9f3dc0c62749c73e2.js": "/precache-manifest.fd576be60e814ea9f3dc0c62749c73e2.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.b8f631a4.chunk.css.map": "/static/css/main.b8f631a4.chunk.css.map",
+    "static/js/2.8d725777.chunk.js.LICENSE.txt": "/static/js/2.8d725777.chunk.js.LICENSE.txt",
+    "static/media/burger.PNG": "/static/media/burger.3bc7d085.PNG",
+    "static/media/calculator.PNG": "/static/media/calculator.2092604d.PNG",
+    "static/media/express.png": "/static/media/express.1a56c31e.png",
+    "static/media/lockd.PNG": "/static/media/lockd.3fbe02d8.PNG",
+    "static/media/node.png": "/static/media/node.04c226c3.png",
+    "static/media/planner.PNG": "/static/media/planner.353da6af.PNG",
+    "static/media/quiz.PNG": "/static/media/quiz.e35f4287.PNG",
+    "static/media/react.png": "/static/media/react.cfa78523.png",
+    "static/media/thrive.PNG": "/static/media/thrive.5fd15165.PNG"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e312f208.js",
+    "static/js/2.8d725777.chunk.js",
+    "static/css/main.b8f631a4.chunk.css",
+    "static/js/main.d2e32d22.chunk.js"
+  ]
+}
