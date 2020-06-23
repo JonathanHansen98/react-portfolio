@@ -36,7 +36,8 @@ const Home = () => {
   }
 
   const Skewed = styled.div`
-  background: ${props => props.background ? props.background : "#202020"};
+  background: ${props => 
+  props.background ? props.background : "#202020"};
   color: #ebebe3;
   background-position: center;
   background-size: cover;
@@ -90,9 +91,8 @@ const Home = () => {
           <Contact />
       </Container>
 
-      <Skewed>
+
         <Footer />
-      </Skewed>
     </>
   )
 };
