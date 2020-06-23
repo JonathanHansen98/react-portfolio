@@ -12,6 +12,16 @@ code {
     monospace;
 }
 
+a {
+  color: #202020;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a3a3a3;
+  text-decoration: none;
+}
+
 
 /* Forward */
 .hvr-forward {
