@@ -2,7 +2,6 @@ import React from 'react';
 import Nav from '../Topbar';
 import Projects from './Projects'
 import Contact from './Contact'
-// import Contact from './Contact';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -46,15 +45,15 @@ const Home = () => {
     0 0, /* left top */
     100% 0%, /* right top */ 
     100% 100%, /* right bottom */
-    0 75% /* left bottom */
+    0 85% /* left bottom */
   );` : props.middle ? `polygon(
     0% 0%, /* left top */
-    100% 25%, /* right top */ 
+    100% 15%, /* right top */ 
     100% 100%, /* right bottom */
-    0% 75% /* left bottom */
+    0% 85% /* left bottom */
   );` : `polygon(
     0% 0%, /* left top */
-    100% 25%, /* right top */ 
+    100% 15%, /* right top */ 
     100% 100%, /* right bottom */
     0% 100% /* left bottom */
   );`}} 
