@@ -12,8 +12,7 @@ const MernRow = () => {
 
     const sequence = async () => {
       await controls.start({
-        y: [10, 0, -10],
-        scale: [1.1, 1]
+        y: [10, 0, -10]
       }
       )
     };
@@ -44,7 +43,7 @@ const MernRow = () => {
         {images.map((img, index) => {
           return (
             <Col key={index} className='p-5' xs={'auto'}>
-              <motion.img transition={{type:'spring',yoyo: Infinity, ease: 'linear', delay: index * .1, duration: 1.5}} custom={index} animate={controls}  height='100px' src={img.img} alt="" />
+              <motion.img transition={{yoyo: Infinity, ease: 'linear', delay: index * .1, duration: 1.5}} custom={index} animate={controls}  height='100px' src={img.img} alt="" />
             </Col>
           )
         })}
