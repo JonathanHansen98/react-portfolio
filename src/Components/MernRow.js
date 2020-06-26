@@ -4,7 +4,7 @@ import expressImg from '../img/express.png';
 import reactImg from '../img/react.png';
 import nodeImg from '../img/node.png';
 import { Row, Col } from 'react-bootstrap';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 
 const MernRow = () => {
@@ -18,7 +18,6 @@ const MernRow = () => {
       scale: 1.05
     }
   }
-  const controls = useAnimation();
 
   const images = [
     {
