@@ -14,7 +14,7 @@ const MernRow = () => {
       scale: 1
     },
     moving: {
-      y: [10, 0, -10],
+      y: [10, -10],
       scale: 1.05
     }
   }
@@ -45,7 +45,7 @@ const MernRow = () => {
         {images.map((img, index) => {
           return (
             <Col key={index} className='p-5' xs={'auto'}>
-              <motion.img transition={{ yoyo: Infinity, ease:'linear', delay: index * .5, duration: 1 }} variants={variants} intial='still' animate='moving' height='100px' src={img.img} alt="" />
+              <motion.img transition={{ yoyo: Infinity, ease:[0.445,0.05,0.55,0.95], delay: index * .3, duration: 1.5 }} variants={variants} intial='still' animate='moving' height='100px' src={img.img} alt="" />
             </Col>
           )
         })}
