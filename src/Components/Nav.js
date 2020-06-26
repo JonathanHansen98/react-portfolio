@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRocket, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { Container, Row, Col } from 'react-bootstrap'
-import Projects from './pages/Projects';
 
 const Nav = ({ isNavOpen, setNavOpen, project }) => {
   console.log(project)

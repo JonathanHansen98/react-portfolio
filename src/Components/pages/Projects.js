@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Row, Col, Card, Button, Accordion } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 import burgerImg from '../../img/burger.PNG';
 import lockdImg from '../../img/lockd.PNG';
 import calculatorImg from '../../img/calculator.PNG';
 import plannerImg from '../../img/planner.PNG';
 import quizImg from '../../img/quiz.PNG';
 import thriveImg from '../../img/thrive.PNG';
-import { motion } from 'framer-motion';
 import Nav from '../Nav';
 import styled from 'styled-components'
 
@@ -47,7 +46,7 @@ const Projects = () => {
     {
       img: lockdImg,
       name: 'Lock\'d',
-      about: 'Password Manager',
+      about: 'Lock\'d was my second project during my bootcamp and is one of my favorites. This full stack app allows users to save passwords, which are encrypted and stored in a MySql database. Users can also generate random passwords and check if their passwords have been pwned.',
       deployed: 'https://universal-storage.herokuapp.com/',
       github: 'https://github.com/schwynf/Universal-Storage'
     },
