@@ -7,7 +7,6 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { Container, Row, Col } from 'react-bootstrap'
 
 const Nav = ({ isNavOpen, setNavOpen, project }) => {
-  console.log(project)
   const MenuNav = styled(motion.div)`
   z-index: 1;
   color:white;
@@ -96,9 +95,9 @@ const Nav = ({ isNavOpen, setNavOpen, project }) => {
     exit: {
       opacity: 0,
       x: 20
-    }
-    
+    }    
   }
+
   return (
     <AnimatePresence>
       {isNavOpen && (
@@ -127,7 +126,7 @@ const Nav = ({ isNavOpen, setNavOpen, project }) => {
 
         <Row>
           <Col className='d-flex justify-content-center'>
-            <ImageHeader variants={listItemVariants} src={project.img} />
+            <ImageHeader alt="Project Header" variants={listItemVariants} src={project.img} />
           </Col>
         </Row>
         <Row>
@@ -139,12 +138,12 @@ const Nav = ({ isNavOpen, setNavOpen, project }) => {
         </Row>
         <Row className='py-3 pt-md-5 d-flex justify-content-around'>
           <Col xs={'auto'}>
-            <IconLink target="_blank" variants={listItemVariants} href={project.deployed}>
+            <IconLink name='icon' target="_blank" variants={listItemVariants} href={project.deployed}>
               <FontAwesomeIcon size={'3x'} icon={faRocket} />
             </IconLink>
           </Col>
           <Col xs={'auto'}>
-            <IconLink target="_blank" variants={listItemVariants} href={project.github}>
+            <IconLink name='icon' target="_blank" variants={listItemVariants} href={project.github}>
               <FontAwesomeIcon size={'3x'} icon={faGithub} />
             </IconLink>
           </Col>
