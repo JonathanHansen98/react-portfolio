@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Row, Col, Card } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import burgerImg from '../../img/burger.PNG';
 import lockdImg from '../../img/lockd.PNG';
 import calculatorImg from '../../img/calculator.PNG';
@@ -19,9 +19,9 @@ import styled from 'styled-components'
 const Projects = () => {
   const [isNavOpen, setNavOpen] = useState(false);
   const [navData, setNavData] = useState({})
-  
+
   document.body.addEventListener('click', () => {
-    if(isNavOpen == true) {
+    if (isNavOpen === true) {
       setNavOpen(false)
     }
   })
@@ -32,26 +32,6 @@ const Projects = () => {
     cursor: pointer;
   }
   `
-
-
-  const styles = {
-    card: {
-      width: '20rem',
-      minHeight: '360px',
-      backgroundColor: '#202020',
-      color: '#ebebe3',
-      textDecoration: 'none'
-    },
-    link: {
-      color: '#ebebe3',
-      textDecoration: 'none'
-    },
-    accordion: {
-      backgroundColor: '#202020',
-      color: '#ebebe3',
-      textDecoration: 'none'
-    }
-  }
 
   const projects = [
     {
@@ -109,76 +89,26 @@ const Projects = () => {
 
       <Row className="pb-md-5 h-100">
         <Col >
-
           <h1 className='text-center'>Projects</h1>
           <Row className='h-100 d-flex justify-content-center align-items-center'>
             {projects.map((project) => {
               return (
-                <Col className='p-2 pb-5'  xs={12} md={4}>
-                    <StyledImg
-                      variant="top"
-                      src={project.cardImg}
-                      width='100%'
-                      onClick={() => {
-                        setNavData(project)
-                        setNavOpen(true);
-                        
-                      }}
-                    />
+                <Col className='p-2 pb-5' xs={12} md={4}>
+                  <StyledImg
+                    variant="top"
+                    src={project.cardImg}
+                    width='100%'
+                    onClick={() => {
+                      setNavData(project)
+                      setNavOpen(true);
+                    }}
+                  />
                 </Col>
               )
             })}
           </Row>
-
         </Col>
       </Row>
-        <Row className='d-flex justify-content-center'>
-          {/* {projects.map((project, index) => {
-          return (
-            <motion.div transition={{ duration: .5 }} whileHover={{ scale: 1.25, zIndex: 10, y: -25, }}>
-              <Col key={index} className='p-2 pb-5 ' md={4}>
-                <Accordion>
-                  <Card className="text-center" style={styles.card}>
-                    <Card.Img
-                      variant="top"
-                      src={project.img}
-                    />
-                    <Card.Header>
-
-                      <h4 style={styles.link} > {project.name} </h4>
-
-                    </Card.Header>
-
-                    <Card.Header>
-                      <Accordion.Toggle style={styles.link} as={Button} variant="link" eventKey="0">
-                        About
-                  </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="0">
-                      <Card.Body>{project.about}</Card.Body>
-                    </Accordion.Collapse>
-                    <Card style={styles.accordion}>
-                      <Card.Header>
-                        <Accordion.Toggle style={styles.link} as={Button} variant="link" eventKey="1">
-                          Project Links
-                    </Accordion.Toggle>
-                      </Card.Header>
-                      <Accordion.Collapse eventKey="1">
-                        <Card.Body>
-                          <a style={styles.link} target='_blank' rel="noopener noreferrer" href={project.github}>Github</a>
-                          <br />
-                          <a style={styles.link} target='_blank' rel="noopener noreferrer" href={project.deployed}>Deployed</a>
-                        </Card.Body>
-                      </Accordion.Collapse>
-                    </Card>
-                  </Card>
-                </Accordion>
-              </Col>
-            </motion.div>
-          )
-        })} */}
-
-        </Row>
     </div>
   );
 };
