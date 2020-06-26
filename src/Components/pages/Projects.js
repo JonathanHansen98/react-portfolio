@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col, Card, Button, Accordion } from "react-bootstrap";
 import burgerImg from '../../img/burger.PNG';
 import lockdImg from '../../img/lockd.PNG';
@@ -7,8 +7,13 @@ import plannerImg from '../../img/planner.PNG';
 import quizImg from '../../img/quiz.PNG';
 import thriveImg from '../../img/thrive.PNG';
 import { motion } from 'framer-motion';
+import Nav from '../Nav';
+
 
 const Projects = () => {
+  const [isNavOpen, setNavOpen] = useState(false);
+  const [navData, setNavData] = useState({})
+
 
   const styles = {
     card: {
@@ -74,16 +79,34 @@ const Projects = () => {
     },
   ]
   return (
-    <div>
-      <Row className="pb-md-5">
-        <Col>
+    <div className='h-100'>
+      <Nav isNavOpen={isNavOpen} setNavOpen={setNavOpen} project={navData} />
+
+      <Row className="pb-md-5 h-100">
+        <Col >
+
           <h1 className='text-center'>Projects</h1>
+          <Row className='h-100 d-flex justify-content-center align-items-center'>
+            {projects.map((project) => {
+              return (
+                <Col className='p-2 pb-5' xs={12} md={4}>
+                  <button onClick={() => {
+                    setNavData(project)
+                    setNavOpen(true);
+                  }}>
+                    {project.name}
+                  </button>
+                </Col>
+              )
+            })}
+          </Row>
+
         </Col>
       </Row>
       <Row className='d-flex justify-content-center'>
-        {projects.map((project, index) => {
+        {/* {projects.map((project, index) => {
           return (
-            <motion.div transition={{duration:.5}} whileHover={{scale:1.25, zIndex: 10, y:-25,}}>
+            <motion.div transition={{ duration: .5 }} whileHover={{ scale: 1.25, zIndex: 10, y: -25, }}>
               <Col key={index} className='p-2 pb-5 ' md={4}>
                 <Accordion>
                   <Card className="text-center" style={styles.card}>
@@ -124,7 +147,7 @@ const Projects = () => {
               </Col>
             </motion.div>
           )
-        })}
+        })} */}
 
       </Row>
     </div>

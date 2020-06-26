@@ -10,10 +10,13 @@ const Topbar = () => {
   };
   const StyledBar = styled.div`
     background-color: #ebebe3;
+    position: relative;
+    top:0;
+    left: 0;
   `;
   return (
     <div>
-      <StyledBar className="fixed-top">
+      <StyledBar>
         <Navbar>
           <Navbar.Brand
             className="hvr-forward"

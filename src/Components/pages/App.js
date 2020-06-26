@@ -13,8 +13,8 @@ import Logo from '../LogoAnimation';
 function App() {
   return (
     <Router>
+      <Nav />
       <div className="App">
-        <Nav/>
         <Switch>
           <Route path='/*' component={Home} exact />
         </Switch>
