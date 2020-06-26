@@ -80,27 +80,6 @@ const Nav = ({ isNavOpen, setNavOpen, project }) => {
     
   `
 
-  const FlexDiv = styled(motion.div)`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    `
-
-  const listVariants = {
-    open: {
-      opacity: 1,
-      transition: {
-        duration: 1.5
-      }
-    },
-    closed: {
-      opacity: 0
-    },
-    exit: {
-      opacity: 0
-    }
-  }
-
   const listItemVariants = {
     open: {
       opacity: 1,
@@ -118,6 +97,7 @@ const Nav = ({ isNavOpen, setNavOpen, project }) => {
       opacity: 0,
       x: 20
     }
+    
   }
   return (
     <AnimatePresence>
