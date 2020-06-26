@@ -20,7 +20,7 @@ const Projects = () => {
   const [isNavOpen, setNavOpen] = useState(false);
   const [navData, setNavData] = useState({})
 
-  document.body.addEventListener('click', () => {
+  document.body.addEventListener('click', e => {
     if (isNavOpen === true) {
       setNavOpen(false)
     }
