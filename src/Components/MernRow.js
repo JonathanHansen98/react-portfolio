@@ -14,7 +14,7 @@ const MernRow = () => {
       scale: 1
     },
     moving: {
-      y: [10, 0, -10],
+      y: [10, -10],
       scale: 1.05
     }
   }
