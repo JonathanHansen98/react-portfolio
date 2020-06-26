@@ -8,16 +8,18 @@ import { motion, useAnimation } from 'framer-motion';
 
 
 const MernRow = () => {
+  const variants = {
+    still: {
+      y: 0,
+      scale: 1
+    },
+    moving: {
+      y: [10, 0, -10],
+      scale: 1.05
+    }
+  }
   const controls = useAnimation();
 
-    const sequence = async () => {
-      await controls.start({
-        y: [10, 0, -10],
-        scale: 1.05
-      }
-      )
-    };
-    sequence()
   const images = [
     {
       img: mongoImg
@@ -44,7 +46,7 @@ const MernRow = () => {
         {images.map((img, index) => {
           return (
             <Col key={index} className='p-5' xs={'auto'}>
-              <motion.img transition={{yoyo: Infinity, ease:'linear', delay: index * .1, duration: 1.5}} custom={index} animate={controls}  height='100px' src={img.img} alt="" />
+              <motion.img transition={{ yoyo: Infinity, ease:'linear', delay: index * .5, duration: 1 }} variants={variants} intial='still' animate='moving' height='100px' src={img.img} alt="" />
             </Col>
           )
         })}
