@@ -19,7 +19,12 @@ import styled from 'styled-components'
 const Projects = () => {
   const [isNavOpen, setNavOpen] = useState(false);
   const [navData, setNavData] = useState({})
-
+  
+  document.body.addEventListener('click', () => {
+    if(isNavOpen == true) {
+      setNavOpen(false)
+    }
+  })
   const StyledImg = styled.img`
   border-radius: 15px;
 
