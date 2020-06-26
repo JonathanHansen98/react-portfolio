@@ -63,38 +63,50 @@ const Nav = ({ isNavOpen, setNavOpen, project }) => {
   }
 
   const ImageHeader = styled(motion.img)`
+  @media (max-width: 575px) {
+    width: 100%;
+  }
     width: 60%;
   `
   const DescriptionCard = styled(motion.div)`
+  @media (max-width: 575px) {
+    height: 30rem;
+  }
+
     width: 100%;
     background: rgba(0,0,0, .3);
     border-radius: 5px;
     padding: 1rem;
     align-self: center;
+    height: 12rem;
+    overflow: auto;
+
+    
   `
 
   const ProjectDesciption = styled(motion.p)`
     font-size: 1.5rem;
     margin: 0;
-    
   `
 
   const listItemVariants = {
     open: {
       opacity: 1,
       x: 0,
+      scale: 1,
       transition: {
         type: 'spring',
-        damping: 7
+        damping: 9
       }
     },
     closed: {
       opacity: 0,
-      x: 20
+      x: 35,
+      scale: 1.09
     },
     exit: {
       opacity: 0,
-      x: 20
+      x: 35
     }    
   }
 
@@ -102,25 +114,22 @@ const Nav = ({ isNavOpen, setNavOpen, project }) => {
     <AnimatePresence>
       {isNavOpen && (
         < MenuNav
-        className='p-2 p-md-3 w-75 vh-100'
+        className='p-0 p-md-3 w-75 vh-100'
           key='modal'
           variants={variants}
           initial='closed'
           animate='open'
           exit='exit'
         >
-      <Container className='h-100' fluid>
-        <Row>
+      <Container className='h-100 d-flex flex-column justify-content-around' fluid>
+        <Row >
           <Col>
-           <FontAwesomeIcon onClick={() => {
+            <ProjectHeader className='mb-0 mb-md-3' variants={listItemVariants}>{project.name}</ProjectHeader>
+          </Col>
+          <Col xs={'auto'}>
+          <FontAwesomeIcon onClick={() => {
              setNavOpen(false)
            }} className='float-right' icon={faTimes} color='red' size='2x' />
-
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <ProjectHeader className='mb-1 mb-md-3' variants={listItemVariants}>{project.name}</ProjectHeader>
           </Col>
         </Row>
 
@@ -131,12 +140,12 @@ const Nav = ({ isNavOpen, setNavOpen, project }) => {
         </Row>
         <Row>
           <Col>
-            <DescriptionCard className='mt-2 mt-md-3' variants={listItemVariants}>
-              <ProjectDesciption >{project.about}</ProjectDesciption>
+            <DescriptionCard className='mt-0 mt-md-3'  variants={listItemVariants}>
+              <ProjectDesciption  >{project.about}</ProjectDesciption>
             </DescriptionCard>
           </Col>
         </Row>
-        <Row className='py-3 pt-md-5 d-flex justify-content-around'>
+        <Row className='py-0 pt-md-5 d-flex justify-content-around'>
           <Col xs={'auto'}>
             <IconLink name='icon' target="_blank" variants={listItemVariants} href={project.deployed}>
               <FontAwesomeIcon size={'3x'} icon={faRocket} />
