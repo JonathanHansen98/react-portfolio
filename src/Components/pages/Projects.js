@@ -91,9 +91,9 @@ const Projects = () => {
         <Col >
           <h1 className='text-center'>Projects</h1>
           <Row className='h-100 d-flex justify-content-center align-items-center'>
-            {projects.map((project) => {
+            {projects.map((project,index) => {
               return (
-                <Col className='p-2 pb-5' xs={12} md={4}>
+                <Col key={index} className='p-2 pb-5' xs={12} md={4}>
                   <StyledImg
                     variant="top"
                     src={project.cardImg}
