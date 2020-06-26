@@ -8,11 +8,20 @@ import quizImg from '../../img/quiz.PNG';
 import thriveImg from '../../img/thrive.PNG';
 import { motion } from 'framer-motion';
 import Nav from '../Nav';
+import styled from 'styled-components'
 
 
 const Projects = () => {
   const [isNavOpen, setNavOpen] = useState(false);
   const [navData, setNavData] = useState({})
+
+  const StyledCard = styled(Card)`
+  background-color: #202020;
+
+  &:hover {
+    cursor: pointer;
+  }
+  `
 
 
   const styles = {
@@ -89,13 +98,24 @@ const Projects = () => {
           <Row className='h-100 d-flex justify-content-center align-items-center'>
             {projects.map((project) => {
               return (
-                <Col className='p-2 pb-5' xs={12} md={4}>
-                  <button onClick={() => {
+                <Col className='p-2 pb-5'  xs={12} md={4}>
+                  <StyledCard
+                  style={{backgroundColor: '#202020'}} 
+                  onClick={() => {
                     setNavData(project)
                     setNavOpen(true);
-                  }}>
-                    {project.name}
-                  </button>
+                  }}
+                  className="text-center">
+                    <Card.Img
+                      variant="top"
+                      src={project.img}
+                    />
+                    <Card.Header>
+
+                      <h4 style={styles.link} > {project.name} </h4>
+
+                    </Card.Header>
+                    </StyledCard>
                 </Col>
               )
             })}
@@ -103,8 +123,8 @@ const Projects = () => {
 
         </Col>
       </Row>
-      <Row className='d-flex justify-content-center'>
-        {/* {projects.map((project, index) => {
+        <Row className='d-flex justify-content-center'>
+          {/* {projects.map((project, index) => {
           return (
             <motion.div transition={{ duration: .5 }} whileHover={{ scale: 1.25, zIndex: 10, y: -25, }}>
               <Col key={index} className='p-2 pb-5 ' md={4}>
@@ -149,7 +169,7 @@ const Projects = () => {
           )
         })} */}
 
-      </Row>
+        </Row>
     </div>
   );
 };

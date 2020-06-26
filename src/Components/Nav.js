@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faRocket } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faGithubSquare } from '@fortawesome/free-brands-svg-icons'
+import { faRocket, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { Container, Row, Col } from 'react-bootstrap'
 import Projects from './pages/Projects';
 
@@ -28,14 +28,6 @@ const Nav = ({ isNavOpen, setNavOpen, project }) => {
       font-size: 2rem;
     }
   }
-  `
-  const ExitButton = styled.button`
-  background: white;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  color: black;
-  border:none;
   `
 
   const IconLink = styled(motion.a)`
@@ -142,9 +134,9 @@ const Nav = ({ isNavOpen, setNavOpen, project }) => {
       <Container className='h-100' fluid>
         <Row>
           <Col>
-            <ExitButton
-              className='float-right'
-              onClick={() => { setNavOpen(false) }}>Close</ExitButton>
+           <FontAwesomeIcon onClick={() => {
+             setNavOpen(false)
+           }} className='float-right' icon={faTimes} color='red' size='2x' />
 
           </Col>
         </Row>
@@ -174,7 +166,7 @@ const Nav = ({ isNavOpen, setNavOpen, project }) => {
           </Col>
           <Col xs={'auto'}>
             <IconLink target="_blank" variants={listItemVariants} href={project.github}>
-              <FontAwesomeIcon size={'3x'} icon={faGithubSquare} />
+              <FontAwesomeIcon size={'3x'} icon={faGithub} />
             </IconLink>
           </Col>
         </Row>
