@@ -33,7 +33,7 @@ const Projects = () => {
     {
       img: lockdImg,
       name: 'Lock\'d',
-      about: 'Password Manager',
+      about: 'Lock\'d was my second project during my bootcamp and is one of my favorites. This full stack app allows users to save passwords, which are encrypted and stored in a MySql database. Users can also generate random passwords and check if their passwords have been pwned.',
       deployed: 'https://universal-storage.herokuapp.com/',
       github: 'https://github.com/schwynf/Universal-Storage'
     },
