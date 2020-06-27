@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { HoverIcon } from './StyledElements'
+import { AccordionIcon } from './StyledElements'
 
 const Accordion = ({icon, children}) => {
   const [isToggled, setToggle] = useState(false);
@@ -38,7 +38,7 @@ const Accordion = ({icon, children}) => {
         )}
       </AnimatePresence>
       <article>
-        <HoverIcon icon={icon} size='2x' color='#202020' onClick={() => setToggle(!isToggled)} />
+        <AccordionIcon icon={icon} size='2x' color='#202020' onClick={() => setToggle(!isToggled)} />
       </article>
     </>
   );
