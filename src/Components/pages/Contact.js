@@ -1,9 +1,9 @@
 import React from "react";
 import ContactForm from "../ContactForm";
 import { Row, Col } from "react-bootstrap";
-import { IconLink } from '../StyledElements';
 import Accordion from "../Accordion";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { AccordionLink } from '../StyledElements'
 
 const Contact = () => {
   return (
@@ -21,7 +21,7 @@ const Contact = () => {
               <Row className='mt-2'>
                 <Col className="d-flex justify-content-end">
                   <Accordion icon={faEnvelope}>
-                     <IconLink href="mailto:jon.hansen.dev@gmail.com">jon.hansen.dev@gmail.com</IconLink></Accordion>
+                     <AccordionLink href="mailto:jon.hansen.dev@gmail.com">jon.hansen.dev@gmail.com</AccordionLink></Accordion>
                 </Col>
               </Row>
               <Row className='mt-2'>

@@ -30,6 +30,14 @@ export const IconLink = styled(motion.a)`
     color: white;
   }
 `;
+
+export const AccordionLink = styled.a`
+  color: #212529;
+
+  &:hover {
+    color: #a3a3a3;
+  }
+`
 export const AccordionIcon = styled(FontAwesomeIcon)`
   color: #202020;
 
@@ -125,13 +133,5 @@ export const ContactButton = styled.button`
   }
   &hover: {
     background-color:: red;
-  }
-`;
-
-export const HoverIcon = styled(FontAwesomeIcon)`
-  color: #161616;
-  &:hover {
-    cursor: pointer;
-    color: #323232;
   }
 `;
