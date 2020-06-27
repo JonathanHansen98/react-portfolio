@@ -1,6 +1,6 @@
 import React from 'react'
-import { Form, Button } from 'react-bootstrap';
-
+import { Form } from 'react-bootstrap';
+import { ContactButton } from './StyledElements';
 const ContactForm = () => {
   return (
     <div>
@@ -27,7 +27,7 @@ const ContactForm = () => {
           <Form.Label >Message</Form.Label>
           <Form.Control name='messaage' as="textarea" rows="3" />
         </Form.Group>
-        <Button type="submit" block> Submit </Button>
+        <ContactButton className='mb-3' type="submit" block> Submit </ContactButton>
         <Form.Text>
           Please allow up to 48 hours for a response. Thank you!
         </Form.Text>

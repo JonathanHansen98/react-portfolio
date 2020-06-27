@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "styled-components";
 import { Navbar, Nav } from "react-bootstrap";
+import { StyledBar } from './StyledElements';
 
 const Topbar = () => {
   const styles = {
@@ -8,12 +8,7 @@ const Topbar = () => {
       color: "#4a4a48",
     },
   };
-  const StyledBar = styled.div`
-    background-color: #ebebe3;
-    position: relative;
-    top:0;
-    left: 0;
-  `;
+
   return (
     <div>
       <StyledBar>
