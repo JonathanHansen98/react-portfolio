@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const MenuNav = styled(motion.div)`
   z-index: 1;
@@ -23,11 +23,26 @@ export const MenuNav = styled(motion.div)`
     }
   }
 `;
-export const IconLink = styled.a`
-  color: #212529;
+export const IconLink = styled(motion.a)`
+  color: #ebebe3;
+
   &:hover {
-    color: #454545;
+    color: white;
   }
+`;
+export const AccordionIcon = styled(FontAwesomeIcon)`
+  color: #202020;
+
+  &:hover {
+    cursor: pointer;
+    color: #323232;
+  }
+`
+export const StyledBar = styled.div`
+  background-color: #ebebe3;
+  position: relative;
+  top: 0;
+  left: 0;
 `;
 export const ProjectHeader = styled(motion.h2)`
   font-size: 2rem;
@@ -119,11 +134,4 @@ export const HoverIcon = styled(FontAwesomeIcon)`
     cursor: pointer;
     color: #323232;
   }
-`
-
-export const StyledBar = styled.div`
-background-color: #ebebe3;
-position: relative;
-top:0;
-left: 0;
 `;
