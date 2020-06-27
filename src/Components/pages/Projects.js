@@ -13,7 +13,7 @@ import burgerCard from '../../img/cards/burger-card.png'
 import quizCard from '../../img/cards/quiz-card.png'
 import scheduleCard from '../../img/cards/scheduler-card.png'
 import Nav from '../Nav';
-import styled from 'styled-components'
+import { StyledImg } from '../StyledElements';
 
 
 const Projects = () => {
@@ -25,13 +25,7 @@ const Projects = () => {
       setNavOpen(false)
     }
   })
-  const StyledImg = styled.img`
-  border-radius: 15px;
 
-  &:hover {
-    cursor: pointer;
-  }
-  `
 
   const projects = [
     {

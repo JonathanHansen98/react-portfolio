@@ -1,44 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRocket, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { Container, Row, Col } from 'react-bootstrap'
-
+import { MenuNav, IconLink, ProjectHeader, ImageHeader, ProjectDesciption, DescriptionCard } from './StyledElements';
 const Nav = ({ isNavOpen, setNavOpen, project }) => {
-  const MenuNav = styled(motion.div)`
-  z-index: 1;
-  color:white;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background: rgba(32, 32, 32, 0.9);
-  overflow-Y: auto;
-  ul {
-    list-style: none;
-  }
-  li, ul {
-    padding: 0;
-    margin: 0;
-    a {
-      color: white;
-      font-size: 2rem;
-    }
-  }
-  `
-
-  const IconLink = styled(motion.a)`
-  color: #ebebe3;
-
-  &:hover {
-    color: white;
-  }
-  `
-
-  const ProjectHeader = styled(motion.h2)`
-  font-size: 2rem;
-  `
   const variants = {
     open: {
       opacity: 1,
@@ -62,34 +29,7 @@ const Nav = ({ isNavOpen, setNavOpen, project }) => {
     }
   }
 
-  const ImageHeader = styled(motion.img)`
-  @media (max-width: 575px) {
-    width: 100%;
-  }
-    width: 60%;
-  `
-  const DescriptionCard = styled(motion.div)`
-  @media (max-width: 575px) {
-    height: 30rem;
-  }
-
-    width: 100%;
-    background: rgba(0,0,0, .3);
-    border-radius: 5px;
-    padding: 1rem;
-    align-self: center;
-    height: 12rem;
-    overflow: auto;
-
-    
-  `
-
-  const ProjectDesciption = styled(motion.p)`
-    font-size: 1.5rem;
-    margin: 0;
-  `
-
-  const listItemVariants = {
+  const childVariants = {
     open: {
       opacity: 1,
       x: 0,
@@ -107,61 +47,61 @@ const Nav = ({ isNavOpen, setNavOpen, project }) => {
     exit: {
       opacity: 0,
       x: 35
-    }    
+    }
   }
 
   return (
     <AnimatePresence>
       {isNavOpen && (
         < MenuNav
-        className='p-0 p-md-3 w-75 vh-100'
+          className='p-0 p-md-3 w-75 vh-100'
           key='modal'
           variants={variants}
           initial='closed'
           animate='open'
           exit='exit'
         >
-      <Container className='h-100 d-flex flex-column justify-content-around' fluid>
-        <Row >
-          <Col>
-            <ProjectHeader className='mb-0 mb-md-3' variants={listItemVariants}>{project.name}</ProjectHeader>
-          </Col>
-          <Col xs={'auto'}>
-          <FontAwesomeIcon onClick={() => {
-             setNavOpen(false)
-           }} className='float-right' icon={faTimes} color='red' size='2x' />
-          </Col>
-        </Row>
+          <Container className='h-100 d-flex flex-column justify-content-around' fluid>
+            <Row >
+              <Col>
+                <ProjectHeader className='mb-0 mb-md-3' variants={childVariants}>{project.name}</ProjectHeader>
+              </Col>
+              <Col xs={'auto'}>
+                <FontAwesomeIcon onClick={() => {
+                  setNavOpen(false)
+                }} className='float-right' icon={faTimes} color='red' size='2x' />
+              </Col>
+            </Row>
 
-        <Row>
-          <Col className='d-flex justify-content-center'>
-            <ImageHeader alt="Project Header" variants={listItemVariants} src={project.img} />
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <DescriptionCard className='mt-0 mt-md-3'  variants={listItemVariants}>
-              <ProjectDesciption  >{project.about}</ProjectDesciption>
-            </DescriptionCard>
-          </Col>
-        </Row>
-        <Row className='py-0 pt-md-5 d-flex justify-content-around'>
-          <Col xs={'auto'}>
-            <IconLink name='icon' target="_blank" variants={listItemVariants} href={project.deployed}>
-              <FontAwesomeIcon size={'3x'} icon={faRocket} />
-            </IconLink>
-          </Col>
-          <Col xs={'auto'}>
-            <IconLink name='icon' target="_blank" variants={listItemVariants} href={project.github}>
-              <FontAwesomeIcon size={'3x'} icon={faGithub} />
-            </IconLink>
-          </Col>
-        </Row>
-      </Container>
+            <Row>
+              <Col className='d-flex justify-content-center'>
+                <ImageHeader alt="Project Header" variants={childVariants} src={project.img} />
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <DescriptionCard className='mt-0 mt-md-3' variants={childVariants}>
+                  <ProjectDesciption  >{project.about}</ProjectDesciption>
+                </DescriptionCard>
+              </Col>
+            </Row>
+            <Row className='py-0 pt-md-5 d-flex justify-content-around'>
+              <Col xs={'auto'}>
+                <IconLink name='icon' target="_blank" variants={childVariants} href={project.deployed}>
+                  <FontAwesomeIcon size={'3x'} icon={faRocket} />
+                </IconLink>
+              </Col>
+              <Col xs={'auto'}>
+                <IconLink name='icon' target="_blank" variants={childVariants} href={project.github}>
+                  <FontAwesomeIcon size={'3x'} icon={faGithub} />
+                </IconLink>
+              </Col>
+            </Row>
+          </Container>
 
         </MenuNav>
-  )
-}
+      )
+      }
     </AnimatePresence >
   )
 }

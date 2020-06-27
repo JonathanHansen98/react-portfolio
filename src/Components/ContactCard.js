@@ -1,7 +1,6 @@
 import React from 'react';
 import { Accordion, Card, Button } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
 
 
 const ContactCard = () => {
