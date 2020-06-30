@@ -1,43 +1,43 @@
-import React from "react";
-import { Row, Col, Card, Button, Accordion } from "react-bootstrap";
+import React, { useState } from "react";
+import { Row, Col } from "react-bootstrap";
 import burgerImg from '../../img/burger.PNG';
 import lockdImg from '../../img/lockd.PNG';
 import calculatorImg from '../../img/calculator.PNG';
 import plannerImg from '../../img/planner.PNG';
 import quizImg from '../../img/quiz.PNG';
 import thriveImg from '../../img/thrive.PNG';
-import { motion } from 'framer-motion';
+import lockdCard from '../../img/cards/lockd-card.png'
+import thriveCard from '../../img/cards/thrive-card.png'
+import calCard from '../../img/cards/cal-card.png'
+import burgerCard from '../../img/cards/burger-card.png'
+import quizCard from '../../img/cards/quiz-card.png'
+import scheduleCard from '../../img/cards/scheduler-card.png'
+import Nav from '../Nav';
+import { StyledImg } from '../StyledElements';
+
 
 const Projects = () => {
+  const [isNavOpen, setNavOpen] = useState(false);
+  const [navData, setNavData] = useState({})
 
-  const styles = {
-    card: {
-      width: '20rem',
-      minHeight: '360px',
-      backgroundColor: '#202020',
-      color: '#ebebe3',
-      textDecoration: 'none'
-    },
-    link: {
-      color: '#ebebe3',
-      textDecoration: 'none'
-    },
-    accordion: {
-      backgroundColor: '#202020',
-      color: '#ebebe3',
-      textDecoration: 'none'
+  document.body.addEventListener('click', e => {
+    if (isNavOpen === true) {
+      setNavOpen(false)
     }
-  }
+  })
+
 
   const projects = [
     {
+      cardImg: lockdCard,
       img: lockdImg,
       name: 'Lock\'d',
-      about: 'Password Manager',
+      about: 'Lock\'d was my second project during my bootcamp and is one of my favorites. This full stack app allows users to save passwords, which are encrypted and stored in a MySql database. Users can also generate random passwords and check if their passwords have been pwned.',
       deployed: 'https://universal-storage.herokuapp.com/',
       github: 'https://github.com/schwynf/Universal-Storage'
     },
     {
+      cardImg: calCard,
       img: calculatorImg,
       name: 'Cal.Culator',
       about: 'For project 1, my team and I came up with the idea of creating an app that suggested meals to a user based on their input, and calculate the combined calories and macro nutrients for each meal they selected.',
@@ -45,6 +45,7 @@ const Projects = () => {
       github: 'https://github.com/JonathanHansen98/nutrition-calculator'
     },
     {
+      cardImg: thriveCard,
       img: thriveImg,
       name: 'Thrive',
       about: 'My first commercial job, I decided to take on react for the learning experience and create this website for thrive detailing. It\'s still a work in progress, but I\'m proud of what I have accomplished in such a short amount of time.',
@@ -52,6 +53,7 @@ const Projects = () => {
       github: 'https://github.com/JonathanHansen98/thrive-detailing'
     },
     {
+      cardImg: burgerCard,
       img: burgerImg,
       name: 'Eat Da Burger',
       about: 'A full stack web app that uses MySQL, Express, Node.js, and Handlebars. User\'s can interact with a database to addburgers to devour, when devoured, the burgers will show under the \'devoured section\'.',
@@ -59,6 +61,7 @@ const Projects = () => {
       github: 'https://github.com/JonathanHansen98/burger-homework'
     },
     {
+      cardImg: scheduleCard,
       img: plannerImg,
       name: 'Work Day Scheduler',
       about: 'This work day planner allows the user to input reminders for certain timeblocks of the day, the time blocks are color coded for past present and future, and the reminders the user inputs persists when the page is reloaded.',
@@ -66,6 +69,7 @@ const Projects = () => {
       github: 'https://github.com/JonathanHansen98/planner-homework'
     },
     {
+      cardImg: quizCard,
       img: quizImg,
       name: 'Space Quiz',
       about: 'One of my first homework assignments that I was really proud of was this space quiz. I mean just look at that UI! User\'s race against the clock in a space themed quiz, they are then able to post their results to a local storage leaderboard.',
@@ -74,58 +78,30 @@ const Projects = () => {
     },
   ]
   return (
-    <div>
-      <Row className="pb-md-5">
-        <Col>
+    <div className='h-100'>
+      <Nav isNavOpen={isNavOpen} setNavOpen={setNavOpen} project={navData} />
+
+      <Row className="pb-md-5 h-100">
+        <Col >
           <h1 className='text-center'>Projects</h1>
+          <Row className='h-100 d-flex justify-content-center align-items-center'>
+            {projects.map((project,index) => {
+              return (
+                <Col key={index} className='p-2 pb-5' xs={12} md={4}>
+                  <StyledImg
+                    variant="top"
+                    src={project.cardImg}
+                    width='100%'
+                    onClick={() => {
+                      setNavData(project)
+                      setNavOpen(true);
+                    }}
+                  />
+                </Col>
+              )
+            })}
+          </Row>
         </Col>
-      </Row>
-      <Row className='d-flex justify-content-center'>
-        {projects.map((project, index) => {
-          return (
-            <motion.div transition={{duration:.5}} whileHover={{scale:1.25, zIndex: 10, y:-25,}}>
-              <Col key={index} className='p-2 pb-5 ' md={4}>
-                <Accordion>
-                  <Card className="text-center" style={styles.card}>
-                    <Card.Img
-                      variant="top"
-                      src={project.img}
-                    />
-                    <Card.Header>
-
-                      <h4 style={styles.link} > {project.name} </h4>
-
-                    </Card.Header>
-
-                    <Card.Header>
-                      <Accordion.Toggle style={styles.link} as={Button} variant="link" eventKey="0">
-                        About
-                  </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="0">
-                      <Card.Body>{project.about}</Card.Body>
-                    </Accordion.Collapse>
-                    <Card style={styles.accordion}>
-                      <Card.Header>
-                        <Accordion.Toggle style={styles.link} as={Button} variant="link" eventKey="1">
-                          Project Links
-                    </Accordion.Toggle>
-                      </Card.Header>
-                      <Accordion.Collapse eventKey="1">
-                        <Card.Body>
-                          <a style={styles.link} target='_blank' rel="noopener noreferrer" href={project.github}>Github</a>
-                          <br />
-                          <a style={styles.link} target='_blank' rel="noopener noreferrer" href={project.deployed}>Deployed</a>
-                        </Card.Body>
-                      </Accordion.Collapse>
-                    </Card>
-                  </Card>
-                </Accordion>
-              </Col>
-            </motion.div>
-          )
-        })}
-
       </Row>
     </div>
   );

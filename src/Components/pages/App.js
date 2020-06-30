@@ -2,28 +2,32 @@ import React from 'react';
 import Nav from '../Topbar';
 import Projects from './Projects'
 import Contact from './Contact'
+<<<<<<< HEAD
 import styled from 'styled-components';
+=======
+>>>>>>> 43d1d74dbd5772d917b0e3924a394f9eed7423f8
 import { Container, Row, Col } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import MernRow from '../MernRow';
 import Footer from '../Footer';
 import Logo from '../LogoAnimation';
+import { Skewed } from '../StyledElements';
 
 function App() {
   return (
     <Router>
+      <Nav />
       <div className="App">
-        <Nav/>
         <Switch>
-          <Route path='/*' component={Home} exact />
+          <Route path='/*' component={Home} />
         </Switch>
       </div>
+      <Footer />
     </Router>
   );
 }
 
 const Home = () => {
-
   const styles = {
     container: {
       minHeight: '750px'
@@ -34,30 +38,6 @@ const Home = () => {
     }
   }
 
-  const Skewed = styled.div`
-  background: ${props => 
-  props.background ? props.background : "#202020"};
-  color: #ebebe3;
-  background-position: center;
-  background-size: cover;
-  clip-path: ${props => {
-      return props.bottom ? `polygon(
-    0 0, /* left top */
-    100% 0%, /* right top */ 
-    100% 100%, /* right bottom */
-    0 85% /* left bottom */
-  );` : props.middle ? `polygon(
-    0% 0%, /* left top */
-    100% 15%, /* right top */ 
-    100% 100%, /* right bottom */
-    0% 85% /* left bottom */
-  );` : `polygon(
-    0% 0%, /* left top */
-    100% 15%, /* right top */ 
-    100% 100%, /* right bottom */
-    0% 100% /* left bottom */
-  );`}} 
-`
   return (
     <>
       <Skewed id='home' className='pt-5' bottom>
@@ -90,8 +70,6 @@ const Home = () => {
           <Contact />
       </Container>
 
-
-        <Footer />
     </>
   )
 };
