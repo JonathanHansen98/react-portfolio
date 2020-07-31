@@ -34,14 +34,9 @@ const MernRow = () => {
     },
   ]
 
-  const styles = {
-    position: {
-      position: 'relative'
-    }
-  }
   return (
     <div>
-      <Row style={styles.position} className='p-5 d-flex justify-content-center'>
+      <Row style={{position:'relative'}} className='p-5 d-flex justify-content-center'>
         {images.map((img, index) => {
           return (
             <Col key={index} className='p-5' xs={'auto'}>
