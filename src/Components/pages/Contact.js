@@ -1,9 +1,8 @@
 import React from "react";
 import ContactForm from "../ContactForm";
 import { Row, Col } from "react-bootstrap";
-import { IconLink } from '../StyledElements';
 import Accordion from "../Accordion";
-import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const Contact = () => {
   return (
