@@ -50,7 +50,7 @@ const Home = () => {
               <div className='d-flex flex-column justify-content-center align-items-center h-100 position-relative' style={styles.content}>
                 <h1 className='text-center'>Jonathan Hansen</h1>
                 <h3 className='mb-md-5 mb-3'>Full Stack Developer</h3>
-                <p className="pt-md-5 mt-md-5 my-3 text-center">I am a software engineer, currently enrolled in UofA's full stack web development course. I have a background in design, and value minimalism and simplicity, in my designs as well as my code.
+                <p className="pt-md-5 mt-md-5 my-3 text-center">I am a software engineer, recently graduated from the UofA Full Stack Web Development Boot Camp. I have a background in design, and value minimalism and simplicity, in my designs as well as my code.
                </p>
               </div>
             </Col>
