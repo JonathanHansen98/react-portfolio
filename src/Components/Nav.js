@@ -88,12 +88,12 @@ const Nav = ({ isNavOpen, setNavOpen, project }) => {
             <Row className='py-0 pt-md-5 d-flex justify-content-around'>
               <Col xs={'auto'}>
                 <IconLink name='icon' target="_blank" variants={childVariants} href={project.deployed}>
-                  <FontAwesomeIcon size={'3x'} icon={faRocket} />
+                  <FontAwesomeIcon size={'3x'} color='#ebebe3' icon={faRocket} />
                 </IconLink>
               </Col>
               <Col xs={'auto'}>
                 <IconLink name='icon' target="_blank" variants={childVariants} href={project.github}>
-                  <FontAwesomeIcon size={'3x'} icon={faGithub} />
+                  <FontAwesomeIcon size={'3x'} color='#ebebe3' icon={faGithub} />
                 </IconLink>
               </Col>
             </Row>

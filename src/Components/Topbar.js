@@ -10,7 +10,7 @@ const Topbar = () => {
 
   return (
     <div>
-        <Navbar style={{backgroundColor: '#ebebe3'}} fixed='top'>
+        <Navbar style={{backgroundColor: '#ebebe3'}} sticky='top'>
           <Col className='d-flex justify-content-around' xs={6}>
             <Navbar.Brand
               className="hvr-forward"

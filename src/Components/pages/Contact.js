@@ -8,9 +8,14 @@ import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 const Contact = () => {
   return (
     <div>
-      <Row className="pb-md-5">
+      <Row>
         <Col className="d-flex justify-content-center">
           <h1>Contact</h1>
+        </Col>
+      </Row>
+      <Row>
+        <Col className="d-flex justify-content-center">
+          <p>jonhansen.dev@gmail.com</p>
         </Col>
       </Row>
       <Row className="d-flex justify-content-center">
@@ -18,12 +23,6 @@ const Contact = () => {
           <ContactForm />
           <Row>
             <Col>
-              <Row className='mt-2'>
-                <Col className="d-flex justify-content-end">
-                  <Accordion icon={faEnvelope}>
-                     <IconLink href="mailto:jon.hansen.dev@gmail.com">jon.hansen.dev@gmail.com</IconLink></Accordion>
-                </Col>
-              </Row>
               <Row className='mt-2'>
                 <Col className="d-flex justify-content-end">
                   <Accordion icon={faPhone}> 480.313.6648 </Accordion>
