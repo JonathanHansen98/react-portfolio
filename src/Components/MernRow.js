@@ -18,18 +18,6 @@ const MernRow = () => {
       scale: 1.05
     }
   }
-
-<<<<<<< HEAD
-    const sequence = async () => {
-      await controls.start({
-        y: [-25, 25],
-        scale: 1.05
-      }
-      )
-    };
-    sequence()
-=======
->>>>>>> 43d1d74dbd5772d917b0e3924a394f9eed7423f8
   const images = [
     {
       img: mongoImg
@@ -51,11 +39,7 @@ const MernRow = () => {
         {images.map((img, index) => {
           return (
             <Col key={index} className='p-5' xs={'auto'}>
-<<<<<<< HEAD
-              <motion.img transition={{yoyo: Infinity, ease: [0.445, 0.05, 0.55, 0.95], delay: index * .1, duration: 1.5}} custom={index} animate={controls}  height='100px' src={img.img} alt="" />
-=======
               <motion.img transition={{ yoyo: Infinity, ease:[0.445,0.05,0.55,0.95], delay: index * .3, duration: 1.5 }} variants={variants} intial='still' animate='moving' height='100px' src={img.img} alt="" />
->>>>>>> 43d1d74dbd5772d917b0e3924a394f9eed7423f8
             </Col>
           )
         })}

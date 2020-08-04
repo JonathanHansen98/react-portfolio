@@ -2,10 +2,6 @@ import React from 'react';
 import Nav from '../Topbar';
 import Projects from './Projects'
 import Contact from './Contact'
-<<<<<<< HEAD
-import styled from 'styled-components';
-=======
->>>>>>> 43d1d74dbd5772d917b0e3924a394f9eed7423f8
 import { Container, Row, Col } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import MernRow from '../MernRow';

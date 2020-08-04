@@ -1,6 +1,5 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
-import { StyledBar } from './StyledElements';
+import { Navbar, Nav, Col } from "react-bootstrap";
 
 const Topbar = () => {
   const styles = {
@@ -11,16 +10,15 @@ const Topbar = () => {
 
   return (
     <div>
-      <StyledBar>
-        <Navbar>
-          <Navbar.Brand
-            className="hvr-forward"
-            style={styles.darnkText}
-            href="#home"
-          >
-            Home
+        <Navbar style={{backgroundColor: '#ebebe3'}} fixed='top'>
+          <Col className='d-flex justify-content-around' xs={6}>
+            <Navbar.Brand
+              className="hvr-forward"
+              style={styles.darnkText}
+              href="#home"
+            >
+              Home
           </Navbar.Brand>
-          <Nav className="mr-auto">
             <Nav.Link
               className="hvr-forward"
               style={styles.darnkText}
@@ -35,9 +33,9 @@ const Topbar = () => {
             >
               Contact
             </Nav.Link>
-          </Nav>
+
+          </Col>
         </Navbar>
-      </StyledBar>
     </div>
   );
 };

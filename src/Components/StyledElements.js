@@ -24,10 +24,10 @@ export const MenuNav = styled(motion.div)`
   }
 `;
 export const IconLink = styled(motion.a)`
-  color: #ebebe3;
+  color: #202020;
 
   &:hover {
-    color: white;
+    color: #323232;
   }
 `;
 export const AccordionIcon = styled(FontAwesomeIcon)`
@@ -38,12 +38,6 @@ export const AccordionIcon = styled(FontAwesomeIcon)`
     color: #323232;
   }
 `
-export const StyledBar = styled.div`
-  background-color: #ebebe3;
-  position: relative;
-  top: 0;
-  left: 0;
-`;
 export const ProjectHeader = styled(motion.h2)`
   font-size: 2rem;
 `;
